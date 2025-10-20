@@ -1,0 +1,434 @@
+/* ====== RESET ====== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* ====== NAVBAR ====== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to right, #90EE90, #ADD8E6);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.desa-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.desa-subtitle {
+  font-size: 0.85rem;
+  color: #fff;
+  opacity: 0.8;
+}
+
+/* ====== TOMBOL HAMBURGER ====== */
+.hamburger {
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+#menu-toggle { display: none; }
+
+/* ====== MENU ====== */
+.menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #90EE90;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#menu-toggle:checked ~ .menu { display: flex; }
+
+.menu a {
+  padding: 1rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: background 0.3s;
+}
+
+.menu a:hover { background: #ADD8E6; }
+
+/* ====== HERO SECTION ====== */
+#hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://via.placeholder.com/1920x1080?text=Anak+Sehat') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 2rem;
+}
+
+.hero-content { max-width: 700px; }
+
+#hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+#hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+
+.btn {
+  padding: 1rem 2rem;
+  background: #FFFF99;
+  color: #333;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ====== SECTION ====== */
+section { padding: 5rem 2rem; margin-top: 80px; max-width: 1200px; margin-inline: auto; }
+h2 { color: #90EE90; text-align: center; margin-bottom: 2rem; }
+
+/* ====== RESPONSIF ====== */
+@media (max-width: 768px) {
+  .menu { width: 100%; border-radius: 0; left: 0; }
+  #hero h1 { font-size: 2rem; }
+  #hero p { font-size: 1rem; }
+}
+
+/* ====== GANTI HERO BACKGROUND JADI FILE LOKAL ====== */
+#hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('assets/bg-selamatdatang.jpg') center/cover no-repeat; /* ganti sesuai nama file kamu */
+}
+
+/* ====== STUNTING SECTION ====== */
+.stunting-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stunting-text {
+  flex: 1 1 400px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.stunting-image {
+  flex: 1 1 350px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.image-card {
+  text-align: center;
+}
+
+.image-card img {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.image-card p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ====== POSYANDU SECTION ====== */
+#posyandu {
+  background: #fff;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.posyandu-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.posyandu-card {
+  background: #f8fff8;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.posyandu-card:hover {
+  transform: translateY(-5px);
+}
+
+.posyandu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.posyandu-card h4 {
+  color: #3a9c4f;
+  margin-bottom: 0.5rem;
+}
+
+.posyandu-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ====== RESPONSIF HP ====== */
+@media (max-width: 768px) {
+  .stunting-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stunting-image {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .image-card img {
+    width: 140px;
+    height: 180px;
+  }
+}
+
+/* ====== PENCEGAHAN & SOLUSI ====== */
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.solution-grid .card {
+  background: #f7fff9;
+  border: 1px solid #d0f0d0;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.solution-grid h3 {
+  margin-bottom: 0.5rem;
+  color: #2e7d32;
+}
+
+.solution-grid ul {
+  padding-left: 1.2rem;
+}
+
+.solution-grid li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+#hero {
+  background: url('assets/bangunan.png') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 150px 20px;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+}
+
+/* Efek gelap supaya teks tetap kebaca di atas gambar */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  border-radius: 0 0 20px 20px;
+}
+
+#hero h1,
+#hero h2,
+#hero p,
+#hero a {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====== RESEP MPASI ====== */
+#resep {
+  background: #f8f8f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#resep h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.resep-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+.resep-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.resep-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.resep-card h3 {
+  font-size: 1.2em;
+  color: #00695c;
+  margin-bottom: 10px;
+}
+
+.resep-card ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.resep-card p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+.resep-card .highlight {
+  margin-top: 8px;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* 🌿 RESPONSIVE BIAR DI HP TETAP 2 KOLOM */
+@media (max-width: 768px) {
+  .resep-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .resep-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .resep-card {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+  .resep-card h3 {
+    font-size: 1em;
+  }
+}
+
+/* ====== JADWAL POSYANDU ====== */
+#jadwal {
+  background: #fefefe;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#jadwal h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+#jadwal p {
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-size: 1em;
+}
+
+.jadwal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.jadwal-img {
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jadwal-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* 🌿 Responsif untuk HP */
+@media (max-width: 768px) {
+  .jadwal-img {
+    width: 95%;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jadwal-img {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
